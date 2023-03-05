@@ -1,0 +1,41 @@
+nav{
+    background: #6a11cb;
+padding: 20px 0;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+
+ul{
+    li{
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.9rem;
+     a{
+        opacity: 0.8;
+
+        transition: all 0.5s ease;
+
+        &.link{
+            opacity:  1 ;
+            text-decoration: underline;
+     
+        
+        }
+        &.none{
+            opacity:  0.8 ;
+            text-decoration: none;
+      
+        
+        }
+     }
+
+
+
+    }
+}
+}
+.active{
+    opacity: 1;
+}
