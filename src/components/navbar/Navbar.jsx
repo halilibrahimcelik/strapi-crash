@@ -13,14 +13,14 @@ const Navbar = () => {
       event.target.classList.add(styles.link);
     }
     const allLinks = document.querySelectorAll(`.${styles.link}`);
-    console.log(allLinks);
+
     allLinks.forEach((e) => {
       return e !== event.target ? e.classList.remove(styles.link) : null;
     });
   };
   useEffect(() => {
     if (window.location.pathname === "/") {
-      //   setActive(true);
+      setActive(true);
     }
   }, []);
 
@@ -37,20 +37,12 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link
-            to="/details"
-            onClick={(e) => handleActive(e)}
-            className={active ? styles.link : null}
-          >
+          <Link to="/details/:id" onClick={(e) => handleActive(e)}>
             Review Details
           </Link>
         </li>
         <li>
-          <Link
-            to="/category"
-            onClick={(e) => handleActive(e)}
-            className={active ? styles.link : null}
-          >
+          <Link to="/category/:id" onClick={(e) => handleActive(e)}>
             Category
           </Link>
         </li>

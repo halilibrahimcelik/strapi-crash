@@ -5,3 +5,12 @@
         text-align: center;
     }
 }
+.reviews{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    @media screen and (min-width:768px) {
+        flex-direction: row;
+    }
+}
