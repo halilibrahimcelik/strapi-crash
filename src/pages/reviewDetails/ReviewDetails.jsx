@@ -1,18 +1,41 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styles from "./reviewDetails.module.scss";
-import useFetch from "../../hooks/useFetch";
+//import useFetch from "../../hooks/useFetch";
 import Container from "../../UI/Container";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { useQuery, gql } from "@apollo/client";
+
+const REVIEW = gql`
+  query GetReview($id: ID!) {
+    review(id: $id) {
+      data {
+        id
+        attributes {
+          title
+          body
+          rating
+        }
+      }
+    }
+  }
+`;
+
 const ReviewDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { loading, error, data } = useFetch(
-    `http://localhost:1337/api/reviews/${id}`
-  );
+  const {
+    loading,
+    error,
+    data: { review },
+  } = useQuery(REVIEW, {
+    variables: { id: id },
+  });
+  // const { loading, error, data } = useFetch(
+  //   `http://localhost:1337/api/reviews/${id}`
+  // );
+  const detailedInfo = review.data.attributes;
 
-  const detailedInfo = data?.data?.attributes;
-  console.log(detailedInfo);
   if (loading) return <p className="text-2xl text-center ">Data is coming </p>;
   if (error)
     return <p className="text-2xl text-center ">we face with an eror </p>;

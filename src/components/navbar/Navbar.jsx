@@ -42,7 +42,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/category/:id" onClick={(e) => handleActive(e)}>
+          <Link to="/category/" onClick={(e) => handleActive(e)}>
             Category
           </Link>
         </li>
