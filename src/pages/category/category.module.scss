@@ -1,0 +1,34 @@
+.filterLinks{
+    display: block;
+
+    width: fit-content;
+
+    font-size: 1.8rem;
+    text-align: center;
+    // line-height: 100px;
+    color: rgba(255,255,255,0.9);
+    border-radius: 16px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+    background-size: 600%;
+    -webkit-animation: anime 16s linear infinite;
+    animation: anime 16s linear infinite;
+
+}
+     
+@keyframes anime {
+
+    0%{
+
+        background-position :0% 50%
+    }
+    50%{
+
+        background-position: 100% 50%
+    }
+    100%{
+
+        background-position: 0% 50%
+    }
+}

@@ -27,7 +27,7 @@ const Home = () => {
   //   "http://localhost:1337/api/reviews"
   // );
   const { loading, error, data } = useQuery(REVIEWS);
-  console.log(data);
+
   if (loading) return <p className="text-2xl text-center ">Data is coming </p>;
   if (error)
     return <p className="text-2xl text-center ">we face with an eror </p>;
@@ -37,7 +37,7 @@ const Home = () => {
         <main className={styles["main-wraper"]}>
           <h1>Welcome to Strapi tutorial</h1>
           <div className={styles.reviews}>
-            {data?.reviews.data?.map((singleItem) => (
+            {data?.reviews?.data?.map((singleItem) => (
               <ReviewItem key={singleItem.id} {...singleItem} />
             ))}
           </div>
