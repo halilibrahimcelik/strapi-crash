@@ -10,6 +10,14 @@ import ReviewItem from "../../components/reviewItem/ReviewItem";
 
 const REVIEWS = gql`
   query GetReviews {
+    categories {
+      data {
+        id
+        attributes {
+          name
+        }
+      }
+    }
     reviews {
       data {
         id

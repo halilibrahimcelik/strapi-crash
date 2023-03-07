@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 const ReviewItem = (props) => {
   const { title, rating, body } = props.attributes;
+  //const { name } = props.category?.categories?.data?.attirbutes?.name;
+
   return (
     <div className="max-w-[100%]  relative  md:w-[30rem] flex flex-col justify-between border rounded-lg p-2 bg-pink-200 bg-opacity-20">
       <span className="rating-val absolute top-[-20px] p-5 bg-red-600 rounded-full flex justify-center items-center text-white font-bold w-[30px] h-[30px] left-[-20px]">
